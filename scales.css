@@ -35,7 +35,7 @@ button {
     font-family: 'IBMPlexMedium', serif;
     align-items: center;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.8em;
     border: none;
   outline: none;
   box-shadow: none;
@@ -53,14 +53,14 @@ button:hover {
 h1 {
     color: #7F55B1;
     font-family: 'IBMPlexBold', serif;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     margin: auto;
 }
 
 p {
     font-family: 'IBMPlexLight', serif;
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -146,7 +146,7 @@ font-family: 'IBMPlexLight', serif;
   background-color: #FFE1E0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
