@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 16px;}
 
 html, body {
   margin: 0;
@@ -65,14 +67,19 @@ p {
 }
 
 .container {
-    margin: 20px auto;
-    justify-content: center;
-    display:flex;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.container button {
+  padding: 0.5em 1.5em;
+  font-size: 1rem;
 }
 
 .header {
   background-color: #FFE1E0;
-  padding: 20px 40px;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,15 +97,13 @@ p {
     background-color: #F49BAB;
 }
 
-.logo {
-  display: block;
-}
+
 
 /* Header nav buttons and dropdown */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
 /* ---------- DROPDOWN ---------- */
@@ -146,7 +151,7 @@ font-family: 'IBMPlexLight', serif;
   background-color: #FFE1E0;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 200px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -156,7 +161,7 @@ font-family: 'IBMPlexLight', serif;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    gap: 8px;
+    gap: 5px;
   }
 
   .dropdown-content {
