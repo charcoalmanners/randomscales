@@ -7,9 +7,19 @@ html {
   font-size: 16px;}
 
 html, body {
-  margin: 0;
-  padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+ padding: 0;
 }
+
+main {
+  flex: 1;
+}
+
+
+
 @font-face {
   font-family: IBMPlexMedium;
   src: url(IBMPlexSerif-Medium.ttf);
@@ -36,7 +46,7 @@ button {
     font-family: 'IBMPlexMedium', serif;
     align-items: center;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     border: none;
   outline: none;
   box-shadow: none;
@@ -54,14 +64,14 @@ button:hover {
 h1 {
     color: #7F55B1;
     font-family: 'IBMPlexBold', serif;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-align: center;
     margin: 10px;
 }
 
 p {
     font-family: 'IBMPlexLight', serif;
-    font-size: 1em;
+    font-size: 1rem;
     text-align: center;
     margin: 10px;
 }
@@ -69,7 +79,7 @@ p {
 .container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 .container button {
@@ -86,18 +96,40 @@ p {
   flex-wrap: wrap;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 .header button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  box-shadow: none;
+    padding: 10px;
+    margin: 5px;
 }
 .header button:hover {
      color: #FFFFFF;
     background-color: #F49BAB;
 }
 
+.header.footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; 
+    margin-top: auto;
+    position: relative;
+    display: flex;
+    justify-content: right;
+    vertical-align: bottom;
+    flex-wrap: wrap;
+    padding: 12px 10px 0px 10px;
+}
 
+.header.footer .header-right {
+    margin-left: 8px;
+    gap: 6px;
+}
+.header.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  font-family: 'IBMPlexLight', serif;
+}
 
 /* Header nav buttons and dropdown */
 .header-right {
@@ -114,7 +146,6 @@ p {
 }
 
 .dropbtn {
-  background-color: #ffffff;
   outline-style: none;
 }
 
