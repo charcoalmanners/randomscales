@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grade 6</title>
+    <link rel="stylesheet" href="scales.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html" class="logo"><img src="header.gif" style="width: 80px;"></a>
+        <div class="header-right">
+            <a class="active" href="index.html"><button>Home</button></a>
+            <div class="dropdown">
+                <button class="dropbtn">Grades</button>
+                <div class="dropdown-content">
+                    <a href="grade1.html">Grade 1</a>
+                    <a href="grade2.html">Grade 2</a>
+                    <a href="grade3.html">Grade 3</a>
+                    <a href="grade4.html">Grade 4</a>
+                    <a href="grade5.html">Grade 5</a>
+                    <a href="grade6.html">Grade 6</a>
+                    <a href="grade7.html">Grade 7</a>
+                    <a href="grade8.html">Grade 8</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="font-size: 1em; text-align: left; margin-top: 10px; margin-left: 10px;">Grade 6</p>
+    <div style="margin-top: 10%;">
+        <h1 id="title"></h1>
+        <p style="margin-top: 3%"><span id="randomisers"></span></p>
+    </div>
+    <div class="container" style="margin-top: 50px;">
+        <button id="scales" onclick="generatescales()">Scales (Similar
+            Motion)</button>
+        <button id="cont" onclick="generatecont()">Contrary-Motion Scales</button>
+    </div>
+    <div class="container">
+        <button id="arp" onclick="generatearp()">Arpeggios</button>
+        <button id="dom" onclick="generatedom()">Dominant Sevenths</button>
+    </div>
+    <script>
+        //#region BUTTONS
+        document.getElementById("scales").addEventListener("click", function () {
+            document.getElementById("title").innerText = "Scales (Similar Motion)";
+        });
+
+        document.getElementById("cont").addEventListener("click", function () {
+            document.getElementById("title").innerText = "Contrary-Motion Scales";
+        });
+
+        document.getElementById("arp").addEventListener("click", function () {
+            document.getElementById("title").innerText = "Arpeggios";
+        });
+
+        document.getElementById("dom").addEventListener("click", function () {
+            document.getElementById("title").innerText = "Dominant Sevenths";
+        });
+        //#endregion
+        // #region RANDOMISERS
+        function getRandomItem(arr) {
+            const rand = Math.floor(Math.random() * arr.length)
+            return arr[rand]
+        };
+        const majmin = ["Major", "Minor"];
+        const artic = ["Staccato", "Legato"];
+        const harmel = ["Harmonic", "Melodic"];
+        // #endregion
+        // #region SCALES
+        function generatescales() {
+            const randmajmin = getRandomItem(majmin);
+            const randartic = getRandomItem(artic);
+            const randharmel = getRandomItem(harmel);
+
+            let randomisers;
+            if (randmajmin == "Minor") {
+                const key = ["D", "F", "G#", "B"];
+                const randkey = getRandomItem(key);
+                document.getElementById("randomisers").innerText = randkey + " " + randmajmin + " " + randharmel + " " + randartic
+            } else {
+                const key = ["D", "F", "Ab", "B"];
+                const randkey = getRandomItem(key);
+                document.getElementById("randomisers").innerText = randkey + " " + randmajmin + " " + randartic
+            }
+        }
+        //#endregion
+        // #region CONT
+        function generatecont() {
+            const randmajmin = getRandomItem(majmin);
+            let randomisers;
+            if (randmajmin == "Minor") {
+                const key = ["D", "F", "G#", "B"];
+                const randkey = getRandomItem(key);
+                document.getElementById("randomisers").innerText = randkey + " " + randmajmin + " " + " Harmonic"
+            } else {
+                const key = ["D", "F", "Ab", "B"];
+                const randkey = getRandomItem(key);
+                document.getElementById("randomisers").innerText = randkey + " " + randmajmin + " "
+            }
+        }
+        //#endregion
+        //#region ARPEGGIOS
+        function generatearp() {
+            const randmajmin = getRandomItem(majmin);
+            if (randmajmin == "Minor") {
+                const key = ["D", "F", "G#", "B"];
+                const randkey = getRandomItem(key);
+                document.getElementById("randomisers").innerText = randkey + " " + randmajmin
+            } else {
+                const key = ["D", "F", "Ab", "B"];
+                const randkey = getRandomItem(key);
+                document.getElementById("randomisers").innerText = randkey + " " + randmajmin
+            }
+        }
+        //#endregion
+        //#region DOMINANT
+        function generatedom() {
+            const key = ["D", "F", "Ab", "B"];
+            const randkey = getRandomItem(key);
+            document.getElementById("randomisers").innerText = randkey
+        }
+        //#endregion
+    </script>
+</body>
+</body>
+
+</html>
